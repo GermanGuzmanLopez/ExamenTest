@@ -1,12 +1,15 @@
-function isPalindrome(text: string): boolean {
-  console.log('isPalindrome...');
-  console.log(text);
-  let bPalindrome: boolean = true;
-  for (let i = 0; i < text.length; i++) {
-    console.log(text.charAt(i).toLowerCase(), 
-      '\t', text.charAt(text.length - i - 1).toLowerCase());
-      //TODO: Implementar lógica de comparación de caracteres
-
+function isPalindrome(word :string): boolean{
+  let middle : number = word.length/2;
+  let bPalindrome : boolean = true;
+  if(word.length % 2 != 0){
+    middle = middle - 0.5;
+  }
+  let iterator : number = word.length - 1;
+  for(let i = 0; i < middle; i++){
+    if(word[i] != word[iterator]){
+      bPalindrome = false;
+    }
+    iterator-=1;
   }
   return bPalindrome;
 }
